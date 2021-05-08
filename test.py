@@ -1,64 +1,95 @@
-import turtle
+import pygame, sys, turtle
 
-wn = turtle.Screen()
-wn.bgcolor("black")
-wn.title("Labyrinthe")
-wn.setup(700,700)
+mainClock = pygame.time.Clock()
+from pygame.locals import *
 
-class Pen(turtle.Turtle):
-    def __init__(self):
-        turtle.Turtle.__init__(self)
-        self.shape("square")
-        self.color("white")
-        self.penup()
-        self.speed(0)
+pygame.init()
+pygame.display.set_caption('game base')
+screen = pygame.display.set_mode((500, 500), 0, 32)
 
-#Creer liste niveau
-levels = [""]
+font = pygame.font.SysFont(None, 20)
 
-level_1 = [
-"XXXXXXXXXXXXXXXXXXXXXXXXX X",
-"X      XXXXXX             X",
-"XXXXX               XXXXXXX",
-"XXXXXXXXXXXXXXXX    XXXXXXX",
-"XXXXXXXXXXXXXXXXX  XXXXXXXX",
-"XXXXXXXXXXXXXXX     XXXXXXX",
-"XXX  XXXXXXXXXX     XXXXXXX",
-"XXX                 XXXXXXX",
-"XXX  XX    XXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX  XXXXXXXXXXXXX XXXXXXXX",
-"XXX                  XXXXXX",
-"XXX  XXXXXXXXXXXXXXXXXXXXXX",
-]
 
-levels.append(level_1)
-def  setup_maze(level):
-    for y in range(len(level)):
-        for x in range(len(level[y])):
-            character = level[y][x]
-            screen_x = -288 + (x * 24)
-            screen_y = 288 - (y * 24)
+def draw_text(text, font, color, surface, x, y):
+    textobj = font.render(text, 1, color)
+    textrect = textobj.get_rect()
+    textrect.topleft = (x, y)
+    surface.blit(textobj, textrect)
 
-            if character == "X":
-                pen.goto(screen_x, screen_y)
-                pen.stamp()
-pen = Pen()
 
-setup_maze(levels[1])
+click = False
 
-while True:
-    pass
+
+def main_menu():
+    while True:
+
+        screen.fill((0, 0, 0))
+        draw_text('main menu', font, (255, 255, 255), screen, 20, 20)
+
+        mx, my = pygame.mouse.get_pos()
+
+        button_1 = pygame.Rect(50, 100, 200, 50)
+        button_2 = pygame.Rect(50, 200, 200, 50)
+        if button_1.collidepoint((mx, my)):
+            if click:
+                game()
+        if button_2.collidepoint((mx, my)):
+            if click:
+                options()
+        pygame.draw.rect(screen, (255, 0, 0), button_1)
+        pygame.draw.rect(screen, (255, 0, 0), button_2)
+
+        click = False
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
+            if event.type == MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    click = True
+
+        pygame.display.update()
+        mainClock.tick(60)
+
+
+def game():
+    running = True
+    while running:
+        screen.fill((0, 0, 0))
+
+        draw_text('game', font, (255, 255, 255), screen, 20, 20)
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    running = False
+
+        pygame.display.update()
+        mainClock.tick(60)
+
+
+def options():
+    running = True
+    while running:
+        screen.fill((0, 0, 0))
+
+        draw_text('options', font, (255, 255, 255), screen, 20, 20)
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    running = False
+
+        pygame.display.update()
+        mainClock.tick(60)
+
+
+main_menu()
