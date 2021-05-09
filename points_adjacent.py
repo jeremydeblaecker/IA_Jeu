@@ -4,7 +4,7 @@ def relation(i, j):
 
     if i == j:                                                          # On vérifie si les sommets sont les mêmes
         return 0
-    if i % vertical != 0 and i % vertical != vertical_rem:              # on verifie les colonnes sauf la derniere et la premiere
+    if i % vertical != 0 and i % vertical != vertical_rem:              # on verifie les colonnes (sauf la derniere et la premiere)
         if i+1 == j or i-1 == j or i+vertical == j or i-vertical == j:
             return 1
 

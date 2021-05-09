@@ -11,7 +11,7 @@ def backened(depart, obstacles, destination):
                 min_index = v
         return min_index
 
-    graph, size = copy.deepcopy(points_adjacent.return_matrix())    # renvoie la matrice de contiguite returns adjacency matrix and size return
+    graph, size = copy.deepcopy(points_adjacent.return_matrix())
     parent = [-2 for i in range(400)]                   # chaque sommet garde son parent en memoire
 
     for value in obstacles:                             # obtient chaque valeur d'obstacle de la liste
