@@ -1,4 +1,4 @@
-def relation(i, j):
+def lien(i, j):
     vertical = 20
     vertical_rem = 19
 
@@ -23,16 +23,16 @@ def relation(i, j):
         else:
             return 0
 
-
+#initialisation de la matrice adjacente
 row_col_size = 20
-size = row_col_size*row_col_size
-adjacencey_mat = [[0 for i in range(size)] for j in range(size)]
+taille = row_col_size*row_col_size
+matrice_adj = [[0 for i in range(taille)] for j in range(taille)]
 
-for i in range(0, size):
-    for j in range(0, size):
-        result = relation(i, j)
-        adjacencey_mat[i][j] = result
-
+#On vérfie si les éléments sont adjacents ou non
+for i in range(0, taille):
+    for j in range(0, taille):
+        resultat = lien(i, j)
+        matrice_adj[i][j] = resultat
 
 def return_matrix():
-    return adjacencey_mat, size
+    return matrice_adj, taille
