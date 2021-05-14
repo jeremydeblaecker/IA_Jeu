@@ -1,21 +1,21 @@
 import points_adjacent
 import copy
 
-def backened(depart, obstacles, destination):
-    def distance_min(dist, sp_set):                     # chosi un sommet parmis ceux adjacent au parent
+def backend(depart, obstacles, destination):
+    def distance_min(dist, sp_set):                             # chosi un sommet parmis ceux adjacent au parent
         min = 10**10
         global min_index
-        for points in range(400):                            # le point adjacent minimum est choisi
+        for points in range(400):                               # le point adjacent minimum est choisi
             if sp_set[points] == False and dist[points]<=min:
                 min = dist[points]
                 min_index = points
         return min_index
 
-    graph, taille = copy.deepcopy(points_adjacent.return_matrix())
+    graph, taille = copy.deepcopy(points_adjacent.return_matrix())   #return la matrice adjacente et sa taille
     parent = [-2 for i in range(400)]                   # chaque sommet garde son parent en memoire
 
-    for value in obstacles:                             # obtient chaque valeur d'obstacle de la liste
-        for z in range(taille):                           # rompt la connexion entre les obstacles et le reste du jeu
+    for value in obstacles:                             # obtient chaque obstacle de la liste
+        for z in range(taille):                         # rompt la connexion entre les obstacles et le reste de la matrice
             graph[z][value] = 0
 
     dist = [10**10 for i in range(taille)]

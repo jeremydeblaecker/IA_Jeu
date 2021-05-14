@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51a7f4b2-69b6-462c-9f39-df8cece77446" name="Default Changelist" comment="Modification niveau 2">
+    <list default="true" id="51a7f4b2-69b6-462c-9f39-df8cece77446" name="Default Changelist" comment="Ajout doc et pres">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back.py" beforeDir="false" afterPath="$PROJECT_DIR$/back.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620629112804</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Modification commentaires">
+      <created>1620632913910</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620632913910</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout doc et pres">
+      <created>1620633001701</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620633001701</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -196,7 +211,9 @@
     <MESSAGE value="Ajout niveau 1, 2, editeur de niveau" />
     <MESSAGE value="Commentaires" />
     <MESSAGE value="Modification niveau 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification niveau 2" />
+    <MESSAGE value="Modification commentaires" />
+    <MESSAGE value="Ajout doc et pres" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout doc et pres" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/Mazify-master/Mazify-master/constants.py">

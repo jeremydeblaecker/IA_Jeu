@@ -103,7 +103,7 @@ def Jeu():
             count += 1
 
     def solution():  # On utilise le script dans le fichier back.py
-        parent = back.backened(depart, liste_obstacles, destination)
+        parent = back.backend(depart, liste_obstacles, destination)
         for value in parent:
             button_list[value].config(bg='#0051FF')  # La couleur du chemin apparait en bleu
         button_list[depart].config(bg='#FFFF00')  # Le point de départ est affiché en jaune
