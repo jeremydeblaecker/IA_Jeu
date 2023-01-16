@@ -1,5 +1,5 @@
 # Informations sur l'_IA de Jeu_ 
-Ce projet de fin d'année fut réalisé lors de ma 3ème année de licence.  
+Ce projet de fin d'année fut réalisé lors de ma 3ème année de licence. Une intelligence artificielle parcours un labyrinthe à la recherche de la sortie.  
 
 # Langages  
 Réalisé en Python avec l'algorithme de Dijkstra et la librairie 'Tinker'.  
